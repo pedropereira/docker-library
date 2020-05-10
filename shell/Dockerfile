@@ -16,11 +16,16 @@ RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM
 COPY zshrc /root/.zshrc
 COPY p10k.zsh /root/.p10k.zsh
 
+# Copy private key
+COPY id_rsa /root/.ssh/
+# Setup ssh config
+COPY ssh_config /root/.ssh/config
+
 # Install plugins for Oh My Zsh
 RUN git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 RUN git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
 
-# Install gitconfig
+# Setup git config
 COPY gitconfig /root/.gitconfig
 
 # Set correct timezone
