@@ -1,5 +1,5 @@
 ARG BASE_IMAGE
-FROM ${BASE_IMAGE}
+FROM pedro/${BASE_IMAGE}
 
 # Set Oh My Zsh default folder
 ENV ZSH_CUSTOM /root/.oh-my-zsh/custom

@@ -1,5 +1,5 @@
 NODE_VERSION=16
-RUBY_VERSION=3.0.1
+RUBY_VERSION=3.0.2
 
 node-image:
 	docker build node/ -t pedro/node-$(NODE_VERSION) --build-arg NODE_VERSION=$(NODE_VERSION)
