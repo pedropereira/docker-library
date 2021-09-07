@@ -17,7 +17,7 @@ COPY zshrc /root/.zshrc
 COPY p10k.zsh /root/.p10k.zsh
 
 # Copy private key
-COPY id_rsa /root/.ssh/
+COPY id_pk /root/.ssh/
 # Setup ssh config
 COPY ssh_config /root/.ssh/config
 
