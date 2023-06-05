@@ -1,5 +1,5 @@
 ARG RUBY_VERSION
-FROM ruby:${RUBY_VERSION}-alpine
+FROM --platform=linux/arm64 ruby:${RUBY_VERSION}-alpine
 
 # Install system dependencies
 RUN apk update && \
