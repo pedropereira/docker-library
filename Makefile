@@ -1,4 +1,4 @@
-NODE_VERSION=18.12.1
+NODE_VERSION=18.16.0
 RUBY_VERSION=3.0.2
 
 node-image:
@@ -8,4 +8,4 @@ ruby-image:
 	docker build ruby/ -t pedro/ruby-$(RUBY_VERSION) --build-arg RUBY_VERSION=$(RUBY_VERSION)
 
 shell-image:
-	docker build shell/ -t pedro/shell-$(BASE_IMAGE) --build-arg BASE_IMAGE=$(BASE_IMAGE)
+	docker build shell/ -t pedro/$(BASE_IMAGE) --build-arg BASE_IMAGE=$(BASE_IMAGE)
