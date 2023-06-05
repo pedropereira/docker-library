@@ -1,5 +1,5 @@
 ARG BASE_IMAGE
-FROM --platform=linux/arm64 pedro/${BASE_IMAGE}
+FROM --platform=linux/arm64 ${BASE_IMAGE}
 
 # Set Oh My Zsh default folder
 ENV ZSH_CUSTOM /root/.oh-my-zsh/custom
@@ -9,7 +9,7 @@ RUN apk update && \
     apk add --no-cache less zsh
 
 # Install Oh My Zsh
-RUN wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh || true
+RUN sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install powerlevel10k
 RUN git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
